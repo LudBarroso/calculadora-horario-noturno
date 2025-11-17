@@ -121,6 +121,9 @@
 
   <script>
     function calcularSaida() {
+      // TESTE: só pra ver se o botão está funcionando
+      alert("Botão clicado! Agora vamos calcular 🙂");
+
       const entrada = document.getElementById("entrada").value;
       const carga = parseFloat(document.getElementById("carga").value);
       const erroEl = document.getElementById("erro");
@@ -135,7 +138,6 @@
         return;
       }
 
-      // hora de entrada em minutos
       const [h, m] = entrada.split(":").map(Number);
       const inicioMin = h * 60 + m;
 
@@ -158,7 +160,7 @@
         } else {
           // parte diurna até 22h + parte noturna com hora reduzida
           const legalNoturno = totalLegal - minutosAte22;
-          const reaisNoturnos = legalNoturno * (52.5 / 60);
+          const reaisNoturnos = legalNoturnos * (52.5 / 60);
           endMin = nightStart + reaisNoturnos;
         }
       }
